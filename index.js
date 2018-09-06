@@ -26,11 +26,11 @@ const FlatListWithEnd = (props) => {
    * @param {any}        {item} Same as from FlatList
    * @returns {Function} A function which returns a React Component.
    */
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item , index }) => {
     if (item.hash === LastElementHash.hash) {
       return props.renderEndComponent();
     }
-    return props.renderItem({ item });
+    return props.renderItem({ item , index });
   };
   const mutatedProps = {
     ...props,
